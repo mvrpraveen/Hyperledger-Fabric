@@ -1,0 +1,427 @@
+{
+    "name": "reliance-network",
+    "x-type": "hlfv1",
+    "version": "1.0.0",
+    "channels": {
+        "ChannelallOrgs": {
+            "orderers": [
+                "orderer.reliance-network.com"
+            ],
+            "peers": {
+                "peer0.infrastructure.reliacne-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer1.infrastructure.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer0.power.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer1.power.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer0.communications.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer1.communications.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer0.entertainment.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer1.entertainment.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer0.capital.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                },
+                "peer1.capital.reliance-network.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "eventSource": true
+                }
+
+            }
+        }
+    },
+    "organizations": {
+        "Infrastructure": {
+            "mspid": "INFRASTRUCTUREMSP",
+            "peers": [
+                "peer0.infrastructure.reliance-network.com",
+                "peer1.infrastructure.reliance-network.com"
+            ],
+            "certificateAuthorities": [
+                "ca.infrastructure.reliance-network.com"
+            ]
+        },
+        "Power": {
+            "mspid": "POWERMSP",
+            "peers": [
+                "peer0.power.reliance-network.com",
+                "peer1.power.reliance-network.com"
+            ],
+            "certificateAuthorities": [
+                "ca.power.reliance-network.com"
+            ]
+        },
+        "Communications": {
+            "mspid": "COMMUNICATIONSMSP",
+            "peers": [
+                "peer0.communications.reliance-network.com",
+                "peer1.communications.reliance-network.com"
+            ],
+            "certificateAuthorities": [
+                "ca.communications.reliance-network.com"
+            ]
+        },
+        "Entertainment": {
+            "mspid": "ENTERTAINMENTMSP",
+            "peers": [
+                "peer0.entertainment.reliance-network.com",
+                "peer1.entertainment.reliance-network.com"
+            ],
+            "certificateAuthorities": [
+                "ca.entertainment.reliance-network.com"
+            ]
+        },
+        "Capital": {
+            "mspid": "CAPITALMSP",
+            "peers": [
+                "peer0.capital.reliance-network.com",
+                "peer1.capital.reliance-network.com"
+            ],
+            "certificateAuthorities": [
+                "ca.capital.reliance-network.com"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer.reliance-network.com": {
+            "url": "grpcs://localhost:7050",
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICZzCCAg2gAwIBAgIQcvWq/yQHtyzUgQf84xIYQjAKBggqhkjOPQQDAjB+MQsw
+                CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+                YW5jaXNjbzEdMBsGA1UEChMUcmVsaWFuY2UtbmV0d29yay5jb20xIzAhBgNVBAMT
+                GnRsc2NhLnJlbGlhbmNlLW5ldHdvcmsuY29tMB4XDTE5MDcwNzA1MDIwMFoXDTI5
+                MDcwNDA1MDIwMFowfjELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWEx
+                FjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xHTAbBgNVBAoTFHJlbGlhbmNlLW5ldHdv
+                cmsuY29tMSMwIQYDVQQDExp0bHNjYS5yZWxpYW5jZS1uZXR3b3JrLmNvbTBZMBMG
+                ByqGSM49AgEGCCqGSM49AwEHA0IABHNu0yuqDg8VOVOam5bpnXYUefuHCzfU16Es
+                nESKTZWEh512JTMvxOE8MNAaJHoCMVraHF4k0GxhGv8wWrvaAIOjbTBrMA4GA1Ud
+                DwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0T
+                AQH/BAUwAwEB/zApBgNVHQ4EIgQgm+z8XYa+gwKs3J2Pv6adHr7YpMNFBTsW8Xp7
+                VCxHd1cwCgYIKoZIzj0EAwIDSAAwRQIhAN7PrcPltuGWsGcQWt6Zih/BzT15R/+j
+                /YvAa045qRyGAiBh8YtoqEOBZnze3SM+nIPP+fDFCyJMT3pGM+/vZiMNTQ==
+                -----END CERTIFICATE-----"
+            }
+        }
+    },
+    "peers": {
+        "peer0.infrastructure.reliance-network.com": {
+            "url": "grpcs://localhost:7051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.infrastructure.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICpjCCAkygAwIBAgIRAM4/7EuawYC2DfBNQ8b5+f0wCgYIKoZIzj0EAwIwgZwx
+                CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+                RnJhbmNpc2NvMSwwKgYDVQQKEyNpbmZyYXN0cnVjdHVyZS5yZWxpYW5jZS1uZXR3
+                b3JrLmNvbTEyMDAGA1UEAxMpdGxzY2EuaW5mcmFzdHJ1Y3R1cmUucmVsaWFuY2Ut
+                bmV0d29yay5jb20wHhcNMTkwNzA3MDUwMjAwWhcNMjkwNzA0MDUwMjAwWjCBnDEL
+                MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+                cmFuY2lzY28xLDAqBgNVBAoTI2luZnJhc3RydWN0dXJlLnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMTIwMAYDVQQDEyl0bHNjYS5pbmZyYXN0cnVjdHVyZS5yZWxpYW5jZS1u
+                ZXR3b3JrLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABIuGrjLwcEXGv/Qx
+                SEARICsAuDqoR9rUYk64oPGfuNGM1ueSbkxm2r7wsuoq7kFlw4nEAJPQ//f90cV/
+                wwC++HKjbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYI
+                KwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgF7Z4Deu8ECV4ZacG
+                bbXhG9f9lUgfFQMWvTlNnluqRJYwCgYIKoZIzj0EAwIDSAAwRQIhALF/mPyTKpyT
+                tNqCl4N6sBP5X0xPNxdAXXE59BARE7nZAiBi7AhMUSXrU9232+73xc0BKywlObYC
+                uUKZ5j2dcBwGSA==
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer1.infrastructure.reliance-network.com": {
+            "url": "grpcs://localhost:8051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.infrastructure.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICpjCCAkygAwIBAgIRAM4/7EuawYC2DfBNQ8b5+f0wCgYIKoZIzj0EAwIwgZwx
+                CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+                RnJhbmNpc2NvMSwwKgYDVQQKEyNpbmZyYXN0cnVjdHVyZS5yZWxpYW5jZS1uZXR3
+                b3JrLmNvbTEyMDAGA1UEAxMpdGxzY2EuaW5mcmFzdHJ1Y3R1cmUucmVsaWFuY2Ut
+                bmV0d29yay5jb20wHhcNMTkwNzA3MDUwMjAwWhcNMjkwNzA0MDUwMjAwWjCBnDEL
+                MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+                cmFuY2lzY28xLDAqBgNVBAoTI2luZnJhc3RydWN0dXJlLnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMTIwMAYDVQQDEyl0bHNjYS5pbmZyYXN0cnVjdHVyZS5yZWxpYW5jZS1u
+                ZXR3b3JrLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABIuGrjLwcEXGv/Qx
+                SEARICsAuDqoR9rUYk64oPGfuNGM1ueSbkxm2r7wsuoq7kFlw4nEAJPQ//f90cV/
+                wwC++HKjbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYI
+                KwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgF7Z4Deu8ECV4ZacG
+                bbXhG9f9lUgfFQMWvTlNnluqRJYwCgYIKoZIzj0EAwIDSAAwRQIhALF/mPyTKpyT
+                tNqCl4N6sBP5X0xPNxdAXXE59BARE7nZAiBi7AhMUSXrU9232+73xc0BKywlObYC
+                uUKZ5j2dcBwGSA==
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer0.power.reliance-network.com": {
+            "url": "grpcs://localhost:9051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.power.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICgjCCAiigAwIBAgIRAOhcDWw1tHDEtAVrayfpYacwCgYIKoZIzj0EAwIwgYox
+                CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+                RnJhbmNpc2NvMSMwIQYDVQQKExpwb3dlci5yZWxpYW5jZS1uZXR3b3JrLmNvbTEp
+                MCcGA1UEAxMgdGxzY2EucG93ZXIucmVsaWFuY2UtbmV0d29yay5jb20wHhcNMTkw
+                NzA3MDUwMjAwWhcNMjkwNzA0MDUwMjAwWjCBijELMAkGA1UEBhMCVVMxEzARBgNV
+                BAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xIzAhBgNVBAoT
+                GnBvd2VyLnJlbGlhbmNlLW5ldHdvcmsuY29tMSkwJwYDVQQDEyB0bHNjYS5wb3dl
+                ci5yZWxpYW5jZS1uZXR3b3JrLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA
+                BMPRxXy3WKjH3gCdtcZCeYlbv7L0/1Cug4Pp7Y93i0EmSzvPIl5s0nqwHgYHEQwc
+                uKDVda4LGBsLBOXejPykL5SjbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAU
+                BggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQg
+                /jtcX8TCeb+U2g8QIlTusuBDM+5Dg2Jm/q5WnmqQkZswCgYIKoZIzj0EAwIDSAAw
+                RQIhAN5Fyg7igRypIZAKqXtjguLFbaBUPvR1dfC66GWEStbFAiBmGOwGxdh6vBWI
+                AXpT4oWAVEggvewzWckqQcyHB0EDpw==
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer1.power.reliance-network.com": {
+            "url": "grpcs://localhost:10051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.power.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICgjCCAiigAwIBAgIRAOhcDWw1tHDEtAVrayfpYacwCgYIKoZIzj0EAwIwgYox
+                CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+                RnJhbmNpc2NvMSMwIQYDVQQKExpwb3dlci5yZWxpYW5jZS1uZXR3b3JrLmNvbTEp
+                MCcGA1UEAxMgdGxzY2EucG93ZXIucmVsaWFuY2UtbmV0d29yay5jb20wHhcNMTkw
+                NzA3MDUwMjAwWhcNMjkwNzA0MDUwMjAwWjCBijELMAkGA1UEBhMCVVMxEzARBgNV
+                BAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xIzAhBgNVBAoT
+                GnBvd2VyLnJlbGlhbmNlLW5ldHdvcmsuY29tMSkwJwYDVQQDEyB0bHNjYS5wb3dl
+                ci5yZWxpYW5jZS1uZXR3b3JrLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA
+                BMPRxXy3WKjH3gCdtcZCeYlbv7L0/1Cug4Pp7Y93i0EmSzvPIl5s0nqwHgYHEQwc
+                uKDVda4LGBsLBOXejPykL5SjbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAU
+                BggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQg
+                /jtcX8TCeb+U2g8QIlTusuBDM+5Dg2Jm/q5WnmqQkZswCgYIKoZIzj0EAwIDSAAw
+                RQIhAN5Fyg7igRypIZAKqXtjguLFbaBUPvR1dfC66GWEStbFAiBmGOwGxdh6vBWI
+                AXpT4oWAVEggvewzWckqQcyHB0EDpw==
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer0.communications.reliance-network.com": {
+            "url": "grpcs://localhost:11051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.communications.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICpDCCAkugAwIBAgIQWkz3lhkGGy1ZxIiYhr7wejAKBggqhkjOPQQDAjCBnDEL
+                MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+                cmFuY2lzY28xLDAqBgNVBAoTI2NvbW11bmljYXRpb25zLnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMTIwMAYDVQQDEyl0bHNjYS5jb21tdW5pY2F0aW9ucy5yZWxpYW5jZS1u
+                ZXR3b3JrLmNvbTAeFw0xOTA3MDcwNTAyMDBaFw0yOTA3MDQwNTAyMDBaMIGcMQsw
+                CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+                YW5jaXNjbzEsMCoGA1UEChMjY29tbXVuaWNhdGlvbnMucmVsaWFuY2UtbmV0d29y
+                ay5jb20xMjAwBgNVBAMTKXRsc2NhLmNvbW11bmljYXRpb25zLnJlbGlhbmNlLW5l
+                dHdvcmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnZgtZAWhzbu0qQs6
+                qxINZzuiJDUCgfRp/KIonKv9vnynRK3TryQ9bwv97PPvpt+XtVI91IT8gRLlaDQF
+                L8VrHqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+                BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCA1RtawdtAoHLtqY1qn
+                D+1ZNQUU0/3TpGxPzi3odQgXdTAKBggqhkjOPQQDAgNHADBEAiA4kgGGlY/qz9Nb
+                w71if2cExmd+XZqc3dEqU7l3T7M9HgIgQmNagoewlJ8DckXkEg6YY4w7DxV1f6uz
+                wSnvAemRGdU=
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer1.communications.reliance-network.com": {
+            "url": "grpcs://localhost:12051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.communications.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICpDCCAkugAwIBAgIQWkz3lhkGGy1ZxIiYhr7wejAKBggqhkjOPQQDAjCBnDEL
+                MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+                cmFuY2lzY28xLDAqBgNVBAoTI2NvbW11bmljYXRpb25zLnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMTIwMAYDVQQDEyl0bHNjYS5jb21tdW5pY2F0aW9ucy5yZWxpYW5jZS1u
+                ZXR3b3JrLmNvbTAeFw0xOTA3MDcwNTAyMDBaFw0yOTA3MDQwNTAyMDBaMIGcMQsw
+                CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+                YW5jaXNjbzEsMCoGA1UEChMjY29tbXVuaWNhdGlvbnMucmVsaWFuY2UtbmV0d29y
+                ay5jb20xMjAwBgNVBAMTKXRsc2NhLmNvbW11bmljYXRpb25zLnJlbGlhbmNlLW5l
+                dHdvcmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnZgtZAWhzbu0qQs6
+                qxINZzuiJDUCgfRp/KIonKv9vnynRK3TryQ9bwv97PPvpt+XtVI91IT8gRLlaDQF
+                L8VrHqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+                BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCA1RtawdtAoHLtqY1qn
+                D+1ZNQUU0/3TpGxPzi3odQgXdTAKBggqhkjOPQQDAgNHADBEAiA4kgGGlY/qz9Nb
+                w71if2cExmd+XZqc3dEqU7l3T7M9HgIgQmNagoewlJ8DckXkEg6YY4w7DxV1f6uz
+                wSnvAemRGdU=
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer0.entertainment.reliance-network.com": {
+            "url": "grpcs://localhost:13051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.entertainment.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICoTCCAkigAwIBAgIRAKbYXtErGLryTDf0hIoFSuUwCgYIKoZIzj0EAwIwgZox
+                CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+                RnJhbmNpc2NvMSswKQYDVQQKEyJlbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMTEwLwYDVQQDEyh0bHNjYS5lbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5l
+                dHdvcmsuY29tMB4XDTE5MDcwNzA1MDIwMFoXDTI5MDcwNDA1MDIwMFowgZoxCzAJ
+                BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+                bmNpc2NvMSswKQYDVQQKEyJlbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5ldHdvcmsu
+                Y29tMTEwLwYDVQQDEyh0bHNjYS5lbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEd5Y4/FTp4oCFY9smZoJb
+                itfIWUr335EYSY7IAxhwPqfFnlFb1+92OI0HSt09v6upqIDEpPT2yGcKIyNudfVS
+                3KNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+                BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCAwmOcRJORGuUdnOn+XTw/w
+                XnDngacjxq1P/NAkmJNGSjAKBggqhkjOPQQDAgNHADBEAiBqO+aYjZMBnc9Pf1Tz
+                7fY244IJPPZJ5df6OyxaA/9VpAIgAYYdHnH2CoIXBCilN/U5w2hL9IBxkTuQ/Bxh
+                SrUWa1E=
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer1.entertainment.reliance-network.com": {
+            "url": "grpcs://localhost:14051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.entertainment.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICoTCCAkigAwIBAgIRAKbYXtErGLryTDf0hIoFSuUwCgYIKoZIzj0EAwIwgZox
+                CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+                RnJhbmNpc2NvMSswKQYDVQQKEyJlbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMTEwLwYDVQQDEyh0bHNjYS5lbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5l
+                dHdvcmsuY29tMB4XDTE5MDcwNzA1MDIwMFoXDTI5MDcwNDA1MDIwMFowgZoxCzAJ
+                BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+                bmNpc2NvMSswKQYDVQQKEyJlbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5ldHdvcmsu
+                Y29tMTEwLwYDVQQDEyh0bHNjYS5lbnRlcnRhaW5tZW50LnJlbGlhbmNlLW5ldHdv
+                cmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEd5Y4/FTp4oCFY9smZoJb
+                itfIWUr335EYSY7IAxhwPqfFnlFb1+92OI0HSt09v6upqIDEpPT2yGcKIyNudfVS
+                3KNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+                BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCAwmOcRJORGuUdnOn+XTw/w
+                XnDngacjxq1P/NAkmJNGSjAKBggqhkjOPQQDAgNHADBEAiBqO+aYjZMBnc9Pf1Tz
+                7fY244IJPPZJ5df6OyxaA/9VpAIgAYYdHnH2CoIXBCilN/U5w2hL9IBxkTuQ/Bxh
+                SrUWa1E=
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer0.capital.reliance-network.com": {
+            "url": "grpcs://localhost:16051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.capital.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICiTCCAi+gAwIBAgIQfIDVafozKMUk3q9jXdQUPjAKBggqhkjOPQQDAjCBjjEL
+                MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+                cmFuY2lzY28xJTAjBgNVBAoTHGNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20x
+                KzApBgNVBAMTInRsc2NhLmNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20wHhcN
+                MTkwNzA3MDUwMjAwWhcNMjkwNzA0MDUwMjAwWjCBjjELMAkGA1UEBhMCVVMxEzAR
+                BgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xJTAjBgNV
+                BAoTHGNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20xKzApBgNVBAMTInRsc2Nh
+                LmNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20wWTATBgcqhkjOPQIBBggqhkjO
+                PQMBBwNCAARitWHUsxDx1fQHfvmdBwJLVSStJerN5XPt1/9u2dAqTrc0N9VG+RDl
+                9Kr+V29Y6QSBxl4qly5eTSB6DH3Xwjk9o20wazAOBgNVHQ8BAf8EBAMCAaYwHQYD
+                VR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYD
+                VR0OBCIEIBKoCpuKmmGTSJ9wgM8rgRlSPYVbIhACKGKzK8VqlTKGMAoGCCqGSM49
+                BAMCA0gAMEUCIQC45CqFJVdVk/I5Vi1h/vmLphrWtIorzDZW0XyV34GHMgIgfCAq
+                +TDfsfT/Mez1Q7nZiVLTynPKtt+eY2enx+y2tSQ=
+                -----END CERTIFICATE-----"
+            }
+        },
+        "peer1.capital.reliance-network.com": {
+            "url": "grpcs://localhost:17051",
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.capital.reliance-network.com"
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----
+                MIICiTCCAi+gAwIBAgIQfIDVafozKMUk3q9jXdQUPjAKBggqhkjOPQQDAjCBjjEL
+                MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+                cmFuY2lzY28xJTAjBgNVBAoTHGNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20x
+                KzApBgNVBAMTInRsc2NhLmNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20wHhcN
+                MTkwNzA3MDUwMjAwWhcNMjkwNzA0MDUwMjAwWjCBjjELMAkGA1UEBhMCVVMxEzAR
+                BgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xJTAjBgNV
+                BAoTHGNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20xKzApBgNVBAMTInRsc2Nh
+                LmNhcGl0YWwucmVsaWFuY2UtbmV0d29yay5jb20wWTATBgcqhkjOPQIBBggqhkjO
+                PQMBBwNCAARitWHUsxDx1fQHfvmdBwJLVSStJerN5XPt1/9u2dAqTrc0N9VG+RDl
+                9Kr+V29Y6QSBxl4qly5eTSB6DH3Xwjk9o20wazAOBgNVHQ8BAf8EBAMCAaYwHQYD
+                VR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYD
+                VR0OBCIEIBKoCpuKmmGTSJ9wgM8rgRlSPYVbIhACKGKzK8VqlTKGMAoGCCqGSM49
+                BAMCA0gAMEUCIQC45CqFJVdVk/I5Vi1h/vmLphrWtIorzDZW0XyV34GHMgIgfCAq
+                +TDfsfT/Mez1Q7nZiVLTynPKtt+eY2enx+y2tSQ=
+                -----END CERTIFICATE-----"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.infrastrucutre.reliance-network.com": {
+            "url": "https://localhost:7054",
+            "caName": "ca.infrastructure.reliance-network.com",
+            "httpOptions": {
+                "verify": true
+            }
+        },
+        "ca.power.reliance-network.com": {
+            "url": "https://localhost:7154",
+            "caName": "ca.power.reliance-network.com",
+            "httpOptions": {
+                "verify": true
+            }
+        },
+        "ca.communications.reliance-network.com": {
+            "url": "https://localhost:7254",
+            "caName": "ca.communications.reliance-network.com",
+            "httpOptions": {
+                "verify": true
+            }
+        },
+        "ca.entertainment.reliance-network.com": {
+            "url": "https://localhost:7354",
+            "caName": "ca.entertainment.reliance-network.com",
+            "httpOptions": {
+                "verify": true
+            }
+        },
+        "ca.capital.reliance-network.com": {
+            "url": "https://localhost:7454",
+            "caName": "ca.capital.reliance-network.com",
+            "httpOptions": {
+                "verify": true
+            }
+        }
+    }
+}
