@@ -1,0 +1,118 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+// Defining the namespace of the network
+
+namespace org.landRegistry.network
+
+
+// Defining the various participants on the network
+
+//creating bankDetails concept to be used in participants 
+
+concept BankDetails { 
+  o String bankName
+  o String bankAddress
+  o Integer accountNumber
+  o String ifsc
+  o Integer bankBalance optional
+}
+
+// Defining the participants- buyer ,seller and registrar
+
+participant Buyer identified by emailID {
+  o Integer uniqueID
+  o String name
+  o String emailID
+  o BankDetails accountDetails
+}
+
+participant Seller identified by emailID {
+  o Integer uniqueID
+  o String name
+  o String emailID
+  o BankDetails accountDetails
+  o String balance optional
+  o String saleDeedDocs
+}
+
+participant Registrar identified by emailID {
+  o String name
+  o String emailID
+}
+
+
+
+// Defining assets - property and propertyListings
+
+asset Property identified by propertyID {
+  o String propertyID
+  o String owner
+  o String registrationDate
+  o String propertyType
+  o String location
+  o Boolean public
+  o Boolean private
+  o Integer marketPrice
+  o Boolean intentForSale
+  o PropertyStatus status default="REGISTERED"
+}
+  
+ asset PropertyListing identified by listingID {
+  o String listingID
+  o String owner
+  o String registrationDate
+  o String propertyType
+  o String location
+  o Integer marketPrice
+  o ListingStatus status default="INTENTFORSALE"
+}
+  
+
+ // enum to define status from any of the two pre-defined options
+  
+ enum PropertyStatus {
+   o INTENFORFSALE
+   o REGISTERED
+ }
+  
+  
+ //enum to define listing status from pre-defined set of 3 options.
+  
+ enum ListingStatus{
+  o CREATED
+  o INTENTFORSALE
+  o REGISTERED
+}
+  
+ 
+ // Defining the transactions on the network
+  
+ transaction addNewProperty {
+  o String PID
+  --> Property property
+}
+  
+ transaction registerTransactedProperty{
+  o String PID
+  --> PropertyListing properyListing
+  --> Buyer buyer
+}
+  
+ transaction intentForSale { 
+  --> Property property
+  --> PropertyListing propertyListing
+  --> Seller seller
+}
